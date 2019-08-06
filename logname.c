@@ -21,22 +21,21 @@
 #include <unistd.h>
 
 const char *logname_desc = "return the user's login name";
-const char *logname_inv  = "logname";
+const char *logname_inv = "logname";
 
-int
-main (int argc, char **argv)
+int main(int argc, char **argv)
 {
-  char *name;
+	char *name;
 
-  if (argc > 1)
-    return 1;
-  
-  name = getlogin();
-  if (name == NULL) {
-    perror ("logname");
-    return 1;
-  }
+	if (argc > 1)
+		return 1;
 
-  printf ("%s\n", name);
-  return 0;
+	name = getlogin();
+	if (name == NULL) {
+		perror("logname");
+		return 1;
+	}
+
+	printf("%s\n", name);
+	return 0;
 }
